@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Student.h"
 
 using namespace std;
 
@@ -10,9 +11,9 @@ void selectionSort(T arr[], int n) {
 		int minIndex = i;
 		for (int j = i + 1; j < n; j++) {
 			if (arr[j] < arr[minIndex])
-				minIndex = j;
-			swap(arr[i], arr[minIndex]);
-		}
+				minIndex = j;	
+		}		
+		swap(arr[i], arr[minIndex]);
 	}
 }
 
@@ -25,18 +26,21 @@ int main() {
 		cout << a[i] << " ";
 	}
 	cout << endl;
-	for (int i = 0; i <4; i++)
-	{
+	for (int i = 0; i <4; i++)	{
 		cout <<b[i] <<" ";
 	}
 	cout << endl;
 	string c[4] = { "D","C","B","A" };
 	selectionSort(c, 4);
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++)	{
 		cout << c[i] << " ";
 	}
 	cout << endl;
+	Student d[4] = { {"D",90},{"C",100},{"B",85}, {"A",95} };
+	selectionSort(d, 4);
+	for (int i = 0; i < 4; i++) {
+		cout << d[i];
+	}
 	system("pause");
 	return 0;
 }
